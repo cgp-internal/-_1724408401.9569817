@@ -1,0 +1,22 @@
+This is not a file that can be generated with content. The `db.sqlite` file is a SQLite database file that will be created and populated by the application when it runs. It does not contain any static content that can be generated beforehand.
+
+Instead, the database schema and initial data should be defined in the code that interacts with the database, such as the `models/polygonModel.js` and `models/flightModel.js` files.
+
+For example, in `models/polygonModel.js`, you could define the schema for the `Polygon` model like this:
+```sql
+CREATE TABLE IF NOT EXISTS polygons (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  coordinates TEXT NOT NULL
+);
+```
+And in `models/flightModel.js`, you could define the schema for the `Flight` model like this:
+```sql
+CREATE TABLE IF NOT EXISTS flights (
+  id INTEGER PRIMARY KEY,
+  polygon_id INTEGER NOT NULL,
+  flight_data TEXT NOT NULL,
+  FOREIGN KEY (polygon_id) REFERENCES polygons (id)
+);
+```
+These schema definitions would be executed when the application starts, creating the necessary tables in the `db.sqlite` file.
