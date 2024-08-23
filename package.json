@@ -1,0 +1,13 @@
+{
+  "name": "web-server-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node app.js",
+    "run": "bash run.sh"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.2",
+    "leaflet": "^1.7.1"
+  }
+}
